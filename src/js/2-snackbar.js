@@ -33,3 +33,27 @@ function createPromise(delay, state) {
     }, delay);
   });
 }
+
+// Додавання классів для стилізації (окремо)
+document.addEventListener('DOMContentLoaded', function () {
+  const legendContainer = document.createElement('div');
+  legendContainer.className = 'legend-container';
+
+  const fieldset = document.querySelector('fieldset');
+
+  const labels = fieldset.querySelectorAll('label');
+
+  labels.forEach(label => {
+    legendContainer.appendChild(label);
+  });
+
+  fieldset.appendChild(legendContainer);
+});
+
+const labelDelay = document.querySelector('.form > label');
+
+labelDelay.classList.add('label-delay');
+
+const inputDelay = labelDelay.querySelector('input[name="delay"]');
+
+inputDelay.classList.add('delay-input');
